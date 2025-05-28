@@ -1,8 +1,8 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY GOD-Stream/package.json GOD-Stream/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
-COPY GOD-Stream/ ./
+COPY . .
 RUN npm run build
 RUN npm install -g serve
 EXPOSE 3000
